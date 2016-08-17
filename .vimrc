@@ -6,7 +6,7 @@ set autoread
 set showcmd
 
 set laststatus=2
-set statusline=%F%m%r%h%w%=%{&ff}\ [%l/%L]
+set statusline=%F\ \|\ %m%r%h%w%=%{&ff}\ \|\ %{&fenc!=''?&fenc:&enc}\ \|\ [%l/%L\ %P]
 set number
 set title
 set ambiwidth=double
