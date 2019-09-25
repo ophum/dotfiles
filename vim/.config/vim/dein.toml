@@ -16,3 +16,6 @@ repo = 'Shougo/vimfiler'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'

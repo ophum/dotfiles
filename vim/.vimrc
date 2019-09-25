@@ -65,4 +65,7 @@ set wrapscan
 set hlsearch
 nmap <Esc><Esc> : nohlsearch<CR><Esc>
 
+set background=dark
+
+let g:indent_guides_enable_on_vim_startup = 1
 
