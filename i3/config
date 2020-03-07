@@ -188,8 +188,9 @@ exec --no-startup-id "feh --bg-scale $HOME/Pictures/sakuratrickend02s.jpg"
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id volumeicon
+exec --no-startup-id slack
 
-assign [class="slack"] 2
+assign [class="Slack"] 2
 
 #client.focused	#ffb74a #ffb74a #000000 #000000 #eb7d34	
 client.focused	#eb7d34 #eb7d34 #000000 #eb7d34	#eb7d34	
