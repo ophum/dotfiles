@@ -145,7 +145,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -202,3 +203,18 @@ bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -dec 5
 
 bindsym $mod+Shift+a exec pavucontrol-qt
+
+bindsym Mod4+l exec --no-startup-id $Locker
+
+set $Locker i3lock -t -i ~/Pictures/sakuratrickend02s.png && sleep 1
+set $mode_system System (l)lock, (e)logout, (s)suspend, (h)hibernate, (r)reboot, (Shift+s) shutdown
+mode "$mode_system" {
+	bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
